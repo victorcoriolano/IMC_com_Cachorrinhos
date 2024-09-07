@@ -2,5 +2,5 @@
 
 # Calculadora IMC
 
-Elegante, stateful, responsiva, com resultados automatizados e fotos de cachorrinhos sincronizados com os indicadores de saúde.
+Elegante, stateful, responsiva, com resultados automatizados e fotos de cachorrinhos sincronizados com os indicadores de saúde.\n
 Projeto criado para atividade na faculdade utilizando Dart/Flutter.
