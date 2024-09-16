@@ -68,7 +68,7 @@ class _IMCCalculatorState extends State<IMCCalculator> {
       return;
     }
     if (imcValues['peso'] != null && imcValues['altura'] != null) {
-      if (imcValues['peso']! < 2.5 ||
+      if (imcValues['peso']! < 2 ||
           imcValues['altura']! < 40 ||
           imcValues['peso']! > 600 ||
           imcValues['altura']! > 300 ||
