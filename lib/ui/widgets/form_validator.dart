@@ -12,6 +12,8 @@ class FormValidator {
         altura *= 100;
       }
       return {'peso': peso, 'altura': altura};
+    } else if(altura == 0 || peso == 0){
+      return {'peso': 0, 'altura': 0};
     } else {
       return {'peso': null, 'altura': null};
     }

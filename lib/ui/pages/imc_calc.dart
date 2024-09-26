@@ -74,12 +74,27 @@ class _IMCCalculatorState extends State<IMCCalculator> {
       peso = imcValues['peso'];
       altura = imcValues['altura'];
     }
+
+    if (imcValues['peso'] == 0 || imcValues['altura'] == 0) {
+      SnackBar snackBar = const SnackBar(
+        content: Text(
+          'Não são aceitados valores zerados (0). Tente colocar seu peso em quilos e sua altura em centímetros (Ex: 70, 180).',
+        ),
+        duration: Duration(seconds: 4),
+        elevation: 1,
+        padding: EdgeInsets.all(10),
+        showCloseIcon: false,
+        behavior: SnackBarBehavior.floating,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return;
+    }
+
     //Verifica valores exorbitantes
     if (imcValues['peso']! < 2 ||
         imcValues['altura']! < 40 ||
         imcValues['peso']! > 600 ||
-        imcValues['altura']! > 300 ||
-        imcValues['altura']! == 0) {
+        imcValues['altura']! > 300) {
       SnackBar snackBar = const SnackBar(
         content: Text(
           'Os valores parecem inválidos. Tente colocar seu peso em quilos e sua altura em centímetros (Ex: 70, 180).',
@@ -204,7 +219,7 @@ class _IMCCalculatorState extends State<IMCCalculator> {
                 DogImage(url: _fotoCachorro),
                 const SizedBox(height: 20),
                 CustomInputField(
-                  label: 'Peso:',
+                  label: 'Peso (em quilos):',
                   controller: _pesoController,
                   focusNode: _pesoFocusNode,
                 ),
